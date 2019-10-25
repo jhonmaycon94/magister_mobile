@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:magister_mobile/views/aluno/home_aluno.dart';
+import 'package:magister_mobile/views/curso/home_curso.dart';
 
 
 void main() => runApp(MyApp());
@@ -36,7 +37,7 @@ class Home extends StatelessWidget {
           crossAxisCount: 2,
           children: <Widget>[
             menuCard(Icons.school, "Professor", Colors.amber, null, context),
-            menuCard(Icons.school, "Curso", Colors.deepOrange, null, context),
+            menuCard(Icons.school, "Curso", Colors.deepOrange, HomeCurso(), context),
             menuCard(Icons.school, "Aluno", Colors.indigoAccent, HomeAluno(), context),
             menuCard(Icons.school, "Período Letivo", Colors.lightGreen, null, context),
             menuCard(Icons.school, "Turma", Colors.teal, null, context),
