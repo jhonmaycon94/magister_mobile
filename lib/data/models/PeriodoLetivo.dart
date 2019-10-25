@@ -31,15 +31,13 @@ class PeriodoLetivo {
 
   Map toMap(){
         Map<String, dynamic> map = {
-      HelperPe.nomeColumn: nome,
-      HelperAluno.totalCreditoColumn: totalCredito,
-      HelperAluno.dataColumn: dataNascimento,
-      HelperAluno.mgpColumn: mgp,
-      HelperAluno.idCursoColumn: idCurso,
+      HelperPeriodoLetivo.semestreColumn: semestre,
+      HelperPeriodoLetivo.dataInicioColumn: dataInicio,
+      HelperPeriodoLetivo.dataFimColumn: dataFim,
     };
 
-    if(id != null){
-      map[HelperAluno.idColumn] = id;
+    if(ano != null){
+      map[HelperPeriodoLetivo.anoColumn] = ano;
     }
     return map;
   }
