@@ -1,3 +1,6 @@
+import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
+import 'package:magister_mobile/data/helpers/HelperTurma.dart';
+
 class Turma {
   int _ano;
   String _semestre;
@@ -29,10 +32,22 @@ class Turma {
   set semestre (String semestre) => this._semestre = _semestre;
 
   Turma.fromMap(Map map){
-
+    _ano = map[HelperTurma.anoColumn];
+    _semestre = map[HelperTurma.semestreColumn];
+    _vagas = map[HelperTurma.semestreColumn];
+    _idDisciplina = map[HelperTurma.idDisciplinaColumn];
+    _idProfessor = map[HelperTurma.idProfessorColumn];
   }
 
   Map toMap(){
-    
+    Map<String, dynamic> map = {
+      HelperTurma.semestreColumn: semestre,
+      HelperTurma.vagasColumn: vagas,
+    };
+
+    if(ano != null){
+      map[HelperTurma.anoColumn] = ano;
+    }
+    return map;
   } 
 }

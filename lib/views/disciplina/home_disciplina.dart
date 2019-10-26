@@ -10,7 +10,7 @@ class HomeDisciplina extends StatefulWidget {
 
 class _HomeDisciplinaState extends State<HomeDisciplina> {
   @override
-  void didUpdateWidget(HomeAluno oldWidget) {
+  void didUpdateWidget(HomeDisciplina oldWidget) {
     super.didUpdateWidget(oldWidget);
     setState(() {});
   }
@@ -19,36 +19,35 @@ class _HomeDisciplinaState extends State<HomeDisciplina> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ALUNOS"),
+        title: Text("DISCIPLINAS"),
         centerTitle: true,
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Colors.purple,
       ),
       body: FutureBuilder<List>(
-        future: HelperAluno.getInstance().getAll(),
+        future: HelperDisciplina.getInstance().getAll(),
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
               physics: BouncingScrollPhysics(),
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) {
-                Aluno item = snapshot.data[index];
+                Disciplina item = snapshot.data[index];
                 return Dismissible(
                   key: UniqueKey(),
-                  background: Container(color: Colors.indigoAccent),
+                  background: Container(color: Colors.purple),
                   onDismissed: (direction) {
-                    HelperAluno.getInstance().delete(item.id);
+                    HelperDisciplina.getInstance().delete(item.id);
                   },
                   child: ListTile(
-                    title: Text(item.nome.toString()),
-                    subtitle: Text(item.dataNascimento.toString()),
-                    leading: CircleAvatar(child: Text(item.id.toString()), backgroundColor: Colors.indigoAccent,),
-                    onTap: () {
+                    title: Text(item.nomeDisciplina.toString()),
+                    leading: CircleAvatar(child: Text(item.id.toString()), backgroundColor: Colors.purple,),
+                    onTap: () { /*
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => EditAluno(
+                          builder: (context) => EditDisciplina(
                                 true,
-                                aluno: item,
+                                disciplina: item,
                               )));
-                    },
+                    */},
                   ),
                 );
               },
@@ -59,12 +58,12 @@ class _HomeDisciplinaState extends State<HomeDisciplina> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Colors.purple,
           child: Icon(Icons.add),
-          onPressed: () {
+          onPressed: () { /*
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => EditAluno(false)));
-          }),
+                MaterialPageRoute(builder: (context) => EditDisciplina(false)));
+          */}),
     );
   }
 }

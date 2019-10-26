@@ -9,7 +9,11 @@ class HelperTurma extends HelperBase<Turma> {
   static final String semestreColumn = "semestre";
   static final String idDisciplinaColumn = "disciplina_id";
   static final String vagasColumn = "vagas";
-  static final String idProfessorColumn = "professor_id"; 
+  static final String idProfessorColumn = "professor_id";
+  static final HelperTurma _instance = HelperTurma.getInstance();
+
+  factory HelperTurma() => _instance;
+  HelperTurma.getInstance(); 
 
   @override
   Future<int> delete(int ano) {

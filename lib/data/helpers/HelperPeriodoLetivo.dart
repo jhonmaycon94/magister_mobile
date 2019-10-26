@@ -9,7 +9,10 @@ class HelperPeriodoLetivo extends HelperBase<PeriodoLetivo>{
   static final String semestreColumn = "semestre";
   static final String dataInicioColumn = "data_incio";
   static final String dataFimColumn = "data_fim";
+  static final HelperPeriodoLetivo _instance = HelperPeriodoLetivo.getInstance();
 
+  factory HelperPeriodoLetivo() => _instance;
+  HelperPeriodoLetivo.getInstance();
 
   @override
   Future<int> delete(int ano) {

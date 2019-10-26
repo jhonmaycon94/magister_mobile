@@ -58,7 +58,7 @@ class Disciplina{
       HelperDisciplina.creditosColumn: creditos,
       HelperDisciplina.tipoDisciplinaColumn: tipoDisciplina,
       HelperDisciplina.horasObrigatoriasColumn: horasObrigatorias,
-      HelperDisciplina.limteFaltasColumn: limitesFaltas;
+      HelperDisciplina.limteFaltasColumn: limitesFaltas,
       HelperDisciplina.idCursoColumn: cursoId,
     };
 

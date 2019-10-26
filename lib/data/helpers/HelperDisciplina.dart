@@ -12,6 +12,10 @@ class HelperDisciplina extends HelperBase<Disciplina> {
   static final String horasObrigatoriasColumn = "horas_obrigatorias";
   static final String limteFaltasColumn = "limite_faltas";
   static final String idCursoColumn = "curso_id";
+  static final HelperDisciplina _instance = HelperDisciplina.getInstance();
+
+  factory HelperDisciplina() => _instance;
+  HelperDisciplina.getInstance();
 
   @override
   Future<int> delete(int id) {
