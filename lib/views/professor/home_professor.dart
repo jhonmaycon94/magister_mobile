@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:magister_mobile/data/helpers/HelperProfessor.dart';
 import 'package:magister_mobile/data/models/professor.dart';
-//import 'package:magister_mobile/views/aluno/edit_professor.dart';
+import 'package:magister_mobile/views/professor/edit_professor.dart';
 
 class HomeProfessor extends StatefulWidget {
   @override
@@ -43,12 +43,11 @@ class _HomeProfessorState extends State<HomeProfessor> {
                     subtitle: Text(item.matricula.toString()),
                     leading: CircleAvatar(child: Text(item.id.toString()), backgroundColor: Colors.amber,),
                     onTap: () {
-                      /*Navigator.of(context).push(MaterialPageRoute(
+                      Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EditProfessor(
                                 true,
-                                aluno: item,
                               )));
-                    */},
+                    },
                   ),
                 );
               },
@@ -61,10 +60,10 @@ class _HomeProfessorState extends State<HomeProfessor> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
             child: Icon(Icons.add),
-            onPressed: () { /* 
+            onPressed: () {  
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => EditProfessor(false)));
-          */}),
+          }),
     );
   }
 }
