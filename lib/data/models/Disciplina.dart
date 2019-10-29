@@ -9,6 +9,7 @@ class Disciplina{
   int _horasObrigatorias;
   int _limiteFaltas;
   int _cursoId;
+  Curso _curso;
 
   Disciplina({int id, String nomeDisciplina, int creditos, String tipoDisciplina, 
               int horasObrigatorias, int limiteFaltas, int cursoId}){
@@ -41,6 +42,12 @@ class Disciplina{
 
   int get cursoId => _cursoId;
   set cursoId(int id) => this._cursoId = id;
+
+  Curso get curso => _curso;
+  set curso(Curso curso){
+    this._curso = curso;
+    this._cursoId = this._curso.id;
+  }
 
   Disciplina.fromMap(Map map){
     this._id = map[HelperDisciplina.idColumn];

@@ -1,16 +1,19 @@
-import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
 import 'package:magister_mobile/data/helpers/HelperTurma.dart';
+import 'package:magister_mobile/data/models/Disciplina.dart';
+import 'package:magister_mobile/data/models/Professor.dart';
 
 class Turma {
   int _ano;
   String _semestre;
   int _idDisciplina;
+  Disciplina _disciplina;
   int _vagas;
   int _idProfessor;
+  Professor _professor;
 
-  Turma({int ano, String semeste, int idDiscilpina, int vagas, int idProfessor}){
+  Turma({int ano, String semestre, int idDiscilpina, int vagas, int idProfessor}){
     this._ano = ano;
-    this._semestre = semeste;
+    this._semestre = semestre;
     this._idDisciplina = idDiscilpina;
     this._vagas = vagas;
     this._idProfessor = idProfessor;
@@ -30,6 +33,18 @@ class Turma {
 
   String get semestre => _semestre;
   set semestre (String semestre) => this._semestre = _semestre;
+
+  Disciplina get disciplina => _disciplina;
+  set disciplina(Disciplina disciplina){
+    this._disciplina = disciplina;
+    this._idDisciplina = this.disciplina.id;
+  }
+
+  Professor get professor => _professor;
+  set professor(Professor professor){
+    this._professor = professor;
+    this.idProfessor = this.professor.id;
+  }
 
   Turma.fromMap(Map map){
     _ano = map[HelperTurma.anoColumn];

@@ -2,11 +2,11 @@ import 'package:magister_mobile/data/helpers/HelperPeriodoLetivo.dart';
 
 class PeriodoLetivo {
   int _ano;
-  int _semestre;
-  int _dataInicio;
-  int _dataFim;
+  String _semestre;
+  String _dataInicio;
+  String _dataFim;
 
-  PeriodoLetivo({int ano, int semestre, int dataInicio, int dataFim}){
+  PeriodoLetivo({int ano, String semestre, String dataInicio, String dataFim}){
     this._ano = ano;
     this._semestre = semestre;
     this._dataInicio = dataInicio;
@@ -16,14 +16,14 @@ class PeriodoLetivo {
   int get ano => _ano;
   set ano(int ano) => this._ano = ano;
 
-  int get semestre => _semestre;
-  set semestre(int semestre) => this._semestre = semestre;
+  String get semestre => _semestre;
+  set semestre(String semestre) => this._semestre = semestre;
 
-  int get dataInicio => _dataInicio;
-  set dataInicio(int data) => this._dataInicio = data;
+  String get dataInicio => _dataInicio;
+  set dataInicio(String data) => this._dataInicio = data;
 
-  int get dataFim => _dataFim;
-  set dataFim(int data) => this._dataFim = data;
+  String get dataFim => _dataFim;
+  set dataFim(String data) => this._dataFim = data;
 
   PeriodoLetivo.fromMap(Map map){
 

@@ -46,6 +46,7 @@ class _HomeProfessorState extends State<HomeProfessor> {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EditProfessor(
                                 true,
+                                professor: item,
                               )));
                     },
                   ),

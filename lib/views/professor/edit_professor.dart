@@ -7,8 +7,7 @@ class EditProfessor extends StatefulWidget {
   final bool edit;
   final Professor professor;
 
-  EditProfessor(this.edit, {this.professor})
-      : assert(edit == true || professor == null);
+  EditProfessor(this.edit, {this.professor}) : assert(edit == true || professor == null);
   @override
   _EditCursoState createState() => _EditCursoState();
 }
@@ -95,7 +94,6 @@ class _EditCursoState extends State<EditProfessor> {
                 } else {
                   await HelperProfessor.getInstance().save(
                     new Professor(
-                      id: 1,
                       matricula: matriculaController.text,
                       nome: nomeController.text,
                     ),
