@@ -42,13 +42,13 @@ class _HomePeriodoLetivoState extends State<HomePeriodoLetivo> {
                     title: Text(item.ano.toString()),
                     subtitle: Text(item.dataInicio.toString()),
                     leading: CircleAvatar(child: Text(item.ano.toString()), backgroundColor: Colors.lightGreen,),
-                    onTap: () {/*
+                    onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EditPeriodoLetivo(
                                 true,
                                 periodoLetivo: item,
                               )));
-                    */},
+                    },
                   ),
                 );
               },
@@ -61,10 +61,10 @@ class _HomePeriodoLetivoState extends State<HomePeriodoLetivo> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightGreen,
           child: Icon(Icons.add),
-          onPressed: () {/*
+          onPressed: () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => EditPeriodoLetivo(false)));
-          */}),
+          }),
     );
   }
 }
