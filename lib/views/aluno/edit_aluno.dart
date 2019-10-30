@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:magister_mobile/data/helpers/helperaluno.dart';
-import 'package:magister_mobile/data/helpers/helpercurso.dart';
-import 'package:magister_mobile/data/models/aluno.dart';
-import 'package:magister_mobile/data/models/curso.dart';
+import 'package:magister_mobile/data/helpers/HelperAluno.dart';
+import 'package:magister_mobile/data/helpers/HelperCurso.dart';
+import 'package:magister_mobile/data/models/Aluno.dart';
+import 'package:magister_mobile/data/models/Curso.dart';
 import 'package:magister_mobile/views/util/widgetUtil.dart';
 
 class EditAluno extends StatefulWidget {
@@ -154,8 +154,7 @@ class _EditCursoState extends State<EditAluno> {
                                 onChanged: (Curso value) {
                                   setState(() {
                                     selected = value;
-                                    idCursoController.text =
-                                        selected.id.toString();
+                                    idCursoController.text = selected.id.toString();
                                     current = value.nomeCurso;
                                   });
                                 },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:magister_mobile/data/helpers/HelperCurso.dart';
-import 'package:magister_mobile/data/models/curso.dart';
+import 'package:magister_mobile/data/models/Curso.dart';
 import 'package:magister_mobile/views/curso/edit_curso.dart';
 
 class HomeCurso extends StatefulWidget {
@@ -43,11 +43,11 @@ class _HomeCursoState extends State<HomeCurso> {
                     subtitle: Text(item.totalCredito.toString()),
                     leading: CircleAvatar(child: Text(item.id.toString()), backgroundColor: Colors.deepOrange,),
                     onTap: () {
-                      /*Navigator.of(context).push(MaterialPageRoute(
+                      Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EditCurso(
                                 true,
                                 curso: item,
-                              )));*/
+                              )));
                     },
                   ),
                 );
@@ -62,8 +62,8 @@ class _HomeCursoState extends State<HomeCurso> {
         backgroundColor: Colors.deepOrange,
           child: Icon(Icons.add),
           onPressed: () {
-            /*Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => EditCurso(false)));*/
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => EditCurso(false)));
           }),
     );
   }

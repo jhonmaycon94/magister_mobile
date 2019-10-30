@@ -1,4 +1,4 @@
-import 'package:magister_mobile/data/helpers/helpercurso.dart';
+import 'package:magister_mobile/data/helpers/HelperCurso.dart';
 import 'package:magister_mobile/data/models/Professor.dart';
 
 class Curso {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:magister_mobile/data/helpers/HelperProfessor.dart';
-import 'package:magister_mobile/data/models/professor.dart';
+import 'package:magister_mobile/data/models/Professor.dart';
 import 'package:magister_mobile/views/professor/edit_professor.dart';
 
 class HomeProfessor extends StatefulWidget {

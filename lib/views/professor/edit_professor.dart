@@ -9,10 +9,10 @@ class EditProfessor extends StatefulWidget {
 
   EditProfessor(this.edit, {this.professor}) : assert(edit == true || professor == null);
   @override
-  _EditCursoState createState() => _EditCursoState();
+  _EditProfessorState createState() => _EditProfessorState();
 }
 
-class _EditCursoState extends State<EditProfessor> {
+class _EditProfessorState extends State<EditProfessor> {
   TextEditingController nomeController = new TextEditingController();
   TextEditingController matriculaController = new TextEditingController();
 
@@ -60,8 +60,12 @@ class _EditCursoState extends State<EditProfessor> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    formField(nomeController, "NOME", Icons.person,
-                        TextInputType.text, Colors.amber,
+                    formField(
+                        nomeController, 
+                        "NOME", 
+                        Icons.person,
+                        TextInputType.text, 
+                        Colors.amber,
                         initialValue:
                             widget.edit ? widget.professor.nome : "s"),
                     formField(

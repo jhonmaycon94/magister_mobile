@@ -1,5 +1,5 @@
-import 'package:magister_mobile/data/helpers/helperbase.dart';
-import 'package:magister_mobile/data/models/curso.dart';
+import 'package:magister_mobile/data/helpers/HelperBase.dart';
+import 'package:magister_mobile/data/models/Curso.dart';
 import 'package:sqflite/sqflite.dart';
 
 class HelperCurso extends HelperBase<Curso> {

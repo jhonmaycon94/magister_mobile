@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:magister_mobile/data/helpers/helperaluno.dart';
-import 'package:magister_mobile/data/models/aluno.dart';
+import 'package:magister_mobile/data/helpers/HelperAluno.dart';
+import 'package:magister_mobile/data/models/Aluno.dart';
 import 'package:magister_mobile/views/aluno/edit_aluno.dart';
 
 class HomeAluno extends StatefulWidget {

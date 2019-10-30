@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:magister_mobile/data/helpers/helperbase.dart';
-import 'package:magister_mobile/data/models/aluno.dart';
+import 'package:magister_mobile/data/helpers/HelperBase.dart';
+import 'package:magister_mobile/data/models/Aluno.dart';
 import 'package:sqflite/sqflite.dart';
 
 class HelperAluno extends HelperBase<Aluno> {

@@ -1,5 +1,5 @@
-import 'package:magister_mobile/data/helpers/helperaluno.dart';
-import 'package:magister_mobile/data/models/curso.dart';
+import 'package:magister_mobile/data/helpers/HelperAluno.dart';
+import 'package:magister_mobile/data/models/Curso.dart';
 
 class Aluno {
   int _id;
