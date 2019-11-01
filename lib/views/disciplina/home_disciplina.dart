@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
 import 'package:magister_mobile/data/models/Disciplina.dart';
-import 'package:magister_mobile/views/aluno/edit_aluno.dart';
+import 'package:magister_mobile/views/disciplina/edit_disciplina.dart';
 
 class HomeDisciplina extends StatefulWidget {
   @override
@@ -41,7 +41,7 @@ class _HomeDisciplinaState extends State<HomeDisciplina> {
                   child: ListTile(
                     title: Text(item.nomeDisciplina.toString()),
                     leading: CircleAvatar(child: Text(item.id.toString()), backgroundColor: Colors.purple,),
-                    onTap: () { /*
+                    onTap: () { 
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EditDisciplina(
                                 true,
@@ -60,10 +60,10 @@ class _HomeDisciplinaState extends State<HomeDisciplina> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
           child: Icon(Icons.add),
-          onPressed: () { /*
+          onPressed: () { 
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => EditDisciplina(false)));
-          */}),
+          }),
     );
   }
 }
