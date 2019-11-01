@@ -39,7 +39,7 @@ class _HomeDisciplinaState extends State<HomeDisciplina> {
                     HelperDisciplina.getInstance().delete(item.id);
                   },
                   child: ListTile(
-                    title: Text(item.nomeDisciplina.toString()),
+                    title: Text(item.nomeDisciplina),
                     leading: CircleAvatar(child: Text(item.id.toString()), backgroundColor: Colors.purple,),
                     onTap: () { 
                       Navigator.of(context).push(MaterialPageRoute(

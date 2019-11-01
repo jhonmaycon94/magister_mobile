@@ -44,7 +44,7 @@ class HelperDisciplina extends HelperBase<Disciplina> {
               creditosColumn,
               tipoDisciplinaColumn,
               horasObrigatoriasColumn,
-              limteFaltasColumn,
+//              limteFaltasColumn,
               idCursoColumn,
             ],
             where: "$idColumn = ?",

@@ -55,7 +55,7 @@ class Disciplina{
     this.creditos = map[HelperDisciplina.creditosColumn];
     this.tipoDisciplina = map[HelperDisciplina.tipoDisciplinaColumn];
     this.horasObrigatorias = map[HelperDisciplina.horasObrigatoriasColumn];
-    this.limiteFaltas = map[HelperDisciplina.limteFaltasColumn];
+//    this.limiteFaltas = map[HelperDisciplina.limteFaltasColumn];
     this.cursoId = map[HelperDisciplina.idCursoColumn];
   }
 
@@ -65,7 +65,7 @@ class Disciplina{
       HelperDisciplina.creditosColumn: creditos,
       HelperDisciplina.tipoDisciplinaColumn: tipoDisciplina,
       HelperDisciplina.horasObrigatoriasColumn: horasObrigatorias,
-      HelperDisciplina.limteFaltasColumn: limitesFaltas,
+//      HelperDisciplina.limteFaltasColumn: limitesFaltas,
       HelperDisciplina.idCursoColumn: cursoId,
     };
 
