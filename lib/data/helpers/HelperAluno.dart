@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:magister_mobile/data/helpers/HelperBase.dart';
 import 'package:magister_mobile/data/models/Aluno.dart';
 import 'package:sqflite/sqflite.dart';
@@ -17,7 +18,7 @@ class HelperAluno extends HelperBase<Aluno> {
   HelperAluno.getInstance();
 
   @override
-  Future<int> delete(int id) {
+  Future<int> delete(int id, {semestre}) {
     return db.then((database) async {
       return await database
           .delete(alunoTable, where: "$idColumn = ?", whereArgs: [id]);

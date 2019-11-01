@@ -26,18 +26,21 @@ class PeriodoLetivo {
   set dataFim(String data) => this._dataFim = data;
 
   PeriodoLetivo.fromMap(Map map){
-
+    _ano = map[HelperPeriodoLetivo.anoColumn];
+    _semestre = map[HelperPeriodoLetivo.semestreColumn];
+    _dataInicio = map[HelperPeriodoLetivo.dataInicioColumn];
+    _dataFim = map[HelperPeriodoLetivo.dataFimColumn]; 
   }
 
   Map toMap(){
         Map<String, dynamic> map = {
-      HelperPeriodoLetivo.semestreColumn: semestre,
       HelperPeriodoLetivo.dataInicioColumn: dataInicio,
       HelperPeriodoLetivo.dataFimColumn: dataFim,
     };
 
-    if(ano != null){
+    if(ano != null && semestre != null){
       map[HelperPeriodoLetivo.anoColumn] = ano;
+      map[HelperPeriodoLetivo.semestreColumn] = semestre;
     }
     return map;
   }

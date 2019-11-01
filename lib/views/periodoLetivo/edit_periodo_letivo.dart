@@ -24,8 +24,6 @@ class _EditPeriodoLetivoState extends State<EditPeriodoLetivo> {
   void initState() {
     super.initState();
     if (widget.edit == true) {
-      anoController.text = widget.periodoLetivo.ano.toString();
-      semestreController.text = widget.periodoLetivo.semestre.toString();
       dataInicioController.text = widget.periodoLetivo.dataInicio.toString();
       dataFimController.text = widget.periodoLetivo.dataFim.toString();
     }
@@ -76,7 +74,7 @@ class _EditPeriodoLetivoState extends State<EditPeriodoLetivo> {
                       semestreController,
                       "SEMESTRE",
                       Icons.apps,
-                      TextInputType.text,
+                      TextInputType.number,
                       Colors.lightGreen,
                       initialValue:
                             widget.edit ? widget.periodoLetivo.semestre : "s"

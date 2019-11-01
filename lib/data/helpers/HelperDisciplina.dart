@@ -18,7 +18,7 @@ class HelperDisciplina extends HelperBase<Disciplina> {
   HelperDisciplina.getInstance();
 
   @override
-  Future<int> delete(int id) {
+  Future<int> delete(int id, {semestre}) {
     return db.then((database) async {
       return await database
           .delete(disciplinaTable, where: "$idColumn = ?", whereArgs: [id]);

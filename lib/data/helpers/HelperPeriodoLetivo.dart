@@ -15,10 +15,9 @@ class HelperPeriodoLetivo extends HelperBase<PeriodoLetivo>{
   HelperPeriodoLetivo.getInstance();
 
   @override
-  Future<int> delete(int ano) {
+  Future<int> delete(int ano, {semestre}) {
     return db.then((database) async {
-      return await database
-          .delete(periodoLetivoTable, where: "$anoColumn = ?", whereArgs: [ano]);
+      return await database.delete(periodoLetivoTable, where: "$anoColumn = ? AND $semestreColumn=?", whereArgs: [ano, semestre]);
     });
   }
 
@@ -69,7 +68,7 @@ class HelperPeriodoLetivo extends HelperBase<PeriodoLetivo>{
   @override
   Future<int> update(PeriodoLetivo data) async => await db.then((database) {
         return database.update(periodoLetivoTable, data.toMap(),
-            where: "$anoColumn = ?", whereArgs: [data.ano]);
+            where: "$anoColumn = ? AND $semestreColumn=?", whereArgs: [data.ano, data.semestre]);
       });
 
 

@@ -14,7 +14,7 @@ class HelperProfessor extends HelperBase<Professor> {
   HelperProfessor.getInstance();
 
   @override
-  Future<int> delete(int id) {
+  Future<int> delete(int id, {semestre}) {
     return db.then((database) async {
       return await database
           .delete(professorTable, where: "$idColumn = ?", whereArgs: [id]);

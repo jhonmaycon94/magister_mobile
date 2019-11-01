@@ -16,10 +16,10 @@ class HelperTurma extends HelperBase<Turma> {
   HelperTurma.getInstance(); 
 
   @override
-  Future<int> delete(int ano) {
+  Future<int> delete(int ano, {semestre}) {
     return db.then((database) async {
       return await database
-          .delete(turmaTable, where: "$anoColumn = ?", whereArgs: [ano]);
+          .delete(turmaTable, where: "$anoColumn = ? AND $semestreColumn=?", whereArgs: [ano, semestre]);
     });
   }
 
@@ -42,8 +42,8 @@ class HelperTurma extends HelperBase<Turma> {
               vagasColumn,
               idProfessorColumn,
             ],
-            where: "$anoColumn = ?",
-            whereArgs: [id]);
+            where: "$anoColumn = ? AND $semestreColumn= ?",
+            whereArgs: [id, semestreColumn]);
 
         if (maps.length > 0) {
           return Turma.fromMap(maps.first);
@@ -70,7 +70,7 @@ class HelperTurma extends HelperBase<Turma> {
   @override
   Future<int> update(Turma data) async => await db.then((database) {
         return database.update(turmaTable, data.toMap(),
-            where: "$anoColumn = ?", whereArgs: [data.ano]);
+            where: "$anoColumn = ? AND $semestreColumn=?", whereArgs: [data.ano, data.semestre]);
       });
 
 }

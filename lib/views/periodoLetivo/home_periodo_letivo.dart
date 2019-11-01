@@ -36,11 +36,11 @@ class _HomePeriodoLetivoState extends State<HomePeriodoLetivo> {
                   key: UniqueKey(),
                   background: Container(color: Colors.lightGreen),
                   onDismissed: (direction) {
-                    HelperPeriodoLetivo.getInstance().delete(item.ano);
+                    HelperPeriodoLetivo.getInstance().delete(item.ano, semestre:item.semestre);
                   },
                   child: ListTile(
-                    title: Text(item.ano.toString()),
-                    subtitle: Text(item.dataInicio.toString()),
+                    title: Text(item.ano.toString()+'.'+item.semestre.toString()),
+                    subtitle: Text(item.dataInicio.toString()+'-'+item.dataFim.toString()),
                     leading: CircleAvatar(child: Text(item.ano.toString()), backgroundColor: Colors.lightGreen,),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(

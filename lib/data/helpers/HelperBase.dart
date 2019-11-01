@@ -1,4 +1,3 @@
-import 'package:magister_mobile/data/helpers/HelperCurso.dart' as prefix0;
 import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
 import 'package:magister_mobile/data/helpers/HelperPeriodoLetivo.dart';
 import 'package:magister_mobile/data/helpers/HelperTurma.dart';
@@ -10,12 +9,12 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 abstract class HelperBase<T> {
-  static final String dataBaseName = "magister_mobile3.db";
+  static final String dataBaseName = "magister_mobile4.db";
   Database _database;
 
   Future<T> getFirst(int id);
   Future<T> save(T object);
-  Future<int> delete(int id);
+  Future<int> delete(int id, {String semestre});
   Future<int> update(T data);
   Future<List> getAll();
   Future<int> getNumber();
@@ -48,8 +47,8 @@ abstract class HelperBase<T> {
     await db.execute(
         "CREATE TABLE IF NOT EXISTS ${HelperDisciplina.disciplinaTable}(${HelperDisciplina.idColumn} INTEGER PRIMARY KEY, ${HelperDisciplina.nomeDisciplinaColumn} TEXT, ${HelperDisciplina.creditosColumn} INTEGER, ${HelperDisciplina.tipoDisciplinaColumn} TEXT, ${HelperDisciplina.horasObrigatoriasColumn} INTEGER, ${HelperDisciplina.limteFaltasColumn} INTEGER, ${HelperDisciplina.idCursoColumn} INTEGER, FOREIGN KEY(${HelperDisciplina.idCursoColumn}) REFERENCES ${HelperCurso.cursoTable}(${HelperCurso.idColumn}))");
     await db.execute(
-        "CREATE TABLE IF NOT EXISTS ${HelperTurma.turmaTable}(${HelperTurma.anoColumn} INTEGER, ${HelperTurma.semestreColumn} TEXT, ${HelperTurma.idDisciplinaColumn} INTEGER, ${HelperTurma.vagasColumn} INTEGER, ${HelperTurma.idProfessorColumn} INTEGER, FOREIGN KEY(${HelperTurma.idDisciplinaColumn}) REFERENCES ${HelperDisciplina.disciplinaTable}(${HelperDisciplina.idColumn}), FOREIGN KEY(${HelperTurma.idProfessorColumn}) REFERENCES ${HelperProfessor.professorTable}(${HelperProfessor.idColumn}))");
+        "CREATE TABLE IF NOT EXISTS ${HelperTurma.turmaTable}(${HelperTurma.anoColumn} INTEGER, ${HelperTurma.semestreColumn} TEXT, ${HelperTurma.idDisciplinaColumn} INTEGER, ${HelperTurma.vagasColumn} INTEGER, ${HelperTurma.idProfessorColumn} INTEGER, FOREIGN KEY(${HelperTurma.idDisciplinaColumn}) REFERENCES ${HelperDisciplina.disciplinaTable}(${HelperDisciplina.idColumn}), FOREIGN KEY(${HelperTurma.idProfessorColumn}) REFERENCES ${HelperProfessor.professorTable}(${HelperProfessor.idColumn}), PRIMARY KEY(${HelperTurma.anoColumn}, ${HelperTurma.semestreColumn}))");
     await db.execute(
-    "CREATE TABLE IF NOT EXISTS ${HelperPeriodoLetivo.periodoLetivoTable}(${HelperPeriodoLetivo.anoColumn} INTEGER, ${HelperPeriodoLetivo.semestreColumn} TEXT, ${HelperPeriodoLetivo.dataInicioColumn} TEXT, ${HelperPeriodoLetivo.dataFimColumn} TEXT)");    
+    "CREATE TABLE IF NOT EXISTS ${HelperPeriodoLetivo.periodoLetivoTable}(${HelperPeriodoLetivo.anoColumn} INTEGER, ${HelperPeriodoLetivo.semestreColumn} TEXT, ${HelperPeriodoLetivo.dataInicioColumn} TEXT, ${HelperPeriodoLetivo.dataFimColumn} TEXT, PRIMARY KEY(${HelperPeriodoLetivo.anoColumn}, ${HelperPeriodoLetivo.semestreColumn}))");    
   }
 }

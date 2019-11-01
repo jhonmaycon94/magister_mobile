@@ -56,12 +56,12 @@ class Turma {
 
   Map toMap(){
     Map<String, dynamic> map = {
-      HelperTurma.semestreColumn: semestre,
       HelperTurma.vagasColumn: vagas,
     };
 
-    if(ano != null){
+    if(ano != null && semestre != null){
       map[HelperTurma.anoColumn] = ano;
+      map[HelperTurma.semestreColumn] = semestre;
     }
     return map;
   } 
