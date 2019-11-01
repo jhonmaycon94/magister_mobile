@@ -47,7 +47,7 @@ class _HomeDisciplinaState extends State<HomeDisciplina> {
                                 true,
                                 disciplina: item,
                               )));
-                    */},
+                    },
                   ),
                 );
               },
