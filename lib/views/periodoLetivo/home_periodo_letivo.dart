@@ -41,7 +41,7 @@ class _HomePeriodoLetivoState extends State<HomePeriodoLetivo> {
                   child: ListTile(
                     title: Text(item.ano.toString()+'.'+item.semestre.toString()),
                     subtitle: Text(item.dataInicio.toString()+'-'+item.dataFim.toString()),
-                    leading: CircleAvatar(child: Text(item.ano.toString()), backgroundColor: Colors.lightGreen,),
+                    leading: CircleAvatar(backgroundColor: Colors.lightGreen,), 
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EditPeriodoLetivo(

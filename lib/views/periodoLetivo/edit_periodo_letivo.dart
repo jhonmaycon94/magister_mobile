@@ -69,7 +69,7 @@ class _EditPeriodoLetivoState extends State<EditPeriodoLetivo> {
                         TextInputType.text, 
                         Colors.lightGreen,
                         initialValue:
-                            widget.edit ? widget.periodoLetivo.ano : "s"),
+                            widget.edit ? widget.periodoLetivo.ano.toString() : "s"),
                     formField(
                       semestreController,
                       "SEMESTRE",
