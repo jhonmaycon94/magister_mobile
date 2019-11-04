@@ -37,13 +37,11 @@ class HelperTurma extends HelperBase<Turma> {
   Future<Turma> getFirst(int id) async => db.then((database) async {
         List<Map> maps = await database.query(turmaTable,
             columns: [
-              semestreColumn,
-              idDisciplinaColumn,
               vagasColumn,
               idProfessorColumn,
             ],
-            where: "$anoColumn = ? AND $semestreColumn= ?",
-            whereArgs: [id, semestreColumn]);
+            where: "$anoColumn = ? AND $semestreColumn= ? AND $idDisciplinaColumn",
+            whereArgs: [id, semestreColumn, idDisciplinaColumn]);
 
         if (maps.length > 0) {
           return Turma.fromMap(maps.first);
@@ -70,7 +68,7 @@ class HelperTurma extends HelperBase<Turma> {
   @override
   Future<int> update(Turma data) async => await db.then((database) {
         return database.update(turmaTable, data.toMap(),
-            where: "$anoColumn = ? AND $semestreColumn=?", whereArgs: [data.ano, data.semestre]);
+            where: "$anoColumn = ? AND $semestreColumn = ? AND $idDisciplinaColumn = ?", whereArgs: [data.ano, data.semestre, data.idDisciplina]);
       });
 
 }

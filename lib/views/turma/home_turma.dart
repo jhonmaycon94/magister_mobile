@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:magister_mobile/data/helpers/HelperTurma.dart';
-import 'package:magister_mobile/data/models/turma.dart';
+import 'package:magister_mobile/data/models/Turma.dart';
 import 'package:magister_mobile/views/turma/edit_turma.dart';
+import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
 
 class HomeTurma extends StatefulWidget {
   @override
@@ -39,16 +40,16 @@ class _HomeTurmaState extends State<HomeTurma> {
                     HelperTurma.getInstance().delete(item.ano);
                   },
                   child: ListTile(
-                    title: Text(item.ano.toString()),
-                    subtitle: Text(item.semestre.toString()),
-                    leading: CircleAvatar(child: Text(item.ano.toString()), backgroundColor: Colors.teal,),
-                    onTap: () {/*
+                    title: Text("Disciplina"),
+                    subtitle: Text(item.ano.toString()+"."+item.semestre),
+                    leading: CircleAvatar(backgroundColor: Colors.teal,),
+                    onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EditTurma(
                                 true,
                                 turma: item,
                               )));
-                    */},
+                    },
                   ),
                 );
               },
@@ -61,10 +62,10 @@ class _HomeTurmaState extends State<HomeTurma> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,
           child: Icon(Icons.add),
-          onPressed: () {/*
+          onPressed: () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => EditTurma(false)));
-          */}),
+          }),
     );
   }
 }

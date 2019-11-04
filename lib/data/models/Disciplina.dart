@@ -52,11 +52,11 @@ class Disciplina{
   Disciplina.fromMap(Map map){
     this._id = map[HelperDisciplina.idColumn];
     this._nomeDisciplina = map[HelperDisciplina.nomeDisciplinaColumn];
-    this.creditos = map[HelperDisciplina.creditosColumn];
-    this.tipoDisciplina = map[HelperDisciplina.tipoDisciplinaColumn];
-    this.horasObrigatorias = map[HelperDisciplina.horasObrigatoriasColumn];
+    this._creditos = map[HelperDisciplina.creditosColumn];
+    this._tipoDisciplina = map[HelperDisciplina.tipoDisciplinaColumn];
+    this._horasObrigatorias = map[HelperDisciplina.horasObrigatoriasColumn];
 //    this.limiteFaltas = map[HelperDisciplina.limteFaltasColumn];
-    this.cursoId = map[HelperDisciplina.idCursoColumn];
+    this._cursoId = map[HelperDisciplina.idCursoColumn];
   }
 
   Map toMap(){

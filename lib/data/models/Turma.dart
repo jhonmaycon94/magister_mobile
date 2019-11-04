@@ -47,21 +47,23 @@ class Turma {
   }
 
   Turma.fromMap(Map map){
-    _ano = map[HelperTurma.anoColumn];
-    _semestre = map[HelperTurma.semestreColumn];
-    _vagas = map[HelperTurma.semestreColumn];
-    _idDisciplina = map[HelperTurma.idDisciplinaColumn];
-    _idProfessor = map[HelperTurma.idProfessorColumn];
+    this._ano = map[HelperTurma.anoColumn];
+    this._semestre = map[HelperTurma.semestreColumn];
+    this._vagas = map[HelperTurma.vagasColumn];
+    this._idDisciplina = map[HelperTurma.idDisciplinaColumn];
+    this._idProfessor = map[HelperTurma.idProfessorColumn];
   }
 
   Map toMap(){
     Map<String, dynamic> map = {
       HelperTurma.vagasColumn: vagas,
+      HelperTurma.idProfessorColumn: idProfessor,
     };
 
     if(ano != null && semestre != null){
       map[HelperTurma.anoColumn] = ano;
       map[HelperTurma.semestreColumn] = semestre;
+      map[HelperTurma.idDisciplinaColumn] =idDisciplina;
     }
     return map;
   } 
