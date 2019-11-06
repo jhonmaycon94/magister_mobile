@@ -14,7 +14,7 @@ class HelperProfessor extends HelperBase<Professor> {
   HelperProfessor.getInstance();
 
   @override
-  Future<int> delete(int id, {semestre}) {
+  Future<int> delete(int id, {String semestre, int idDisciplina}) {
     return db.then((database) async {
       return await database
           .delete(professorTable, where: "$idColumn = ?", whereArgs: [id]);
@@ -32,7 +32,7 @@ class HelperProfessor extends HelperBase<Professor> {
       });
 
   @override
-  Future<Professor> getFirst(int id) async => db.then((database) async {
+  Future<Professor> getFirst(int id, {String semestre, int idDisciplina}) async => db.then((database) async {
         List<Map> maps = await database.query(professorTable,
             columns: [
               idColumn,

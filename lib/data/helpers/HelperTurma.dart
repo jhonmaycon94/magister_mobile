@@ -1,5 +1,6 @@
 import 'package:magister_mobile/data/helpers/HelperBase.dart';
 import 'package:magister_mobile/data/models/Turma.dart';
+import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:async';
 
@@ -8,6 +9,7 @@ class HelperTurma extends HelperBase<Turma> {
   static final String anoColumn = "ano";
   static final String semestreColumn = "semestre";
   static final String idDisciplinaColumn = "disciplina_id";
+  static final String nomeDisciplinaColumn = "nome_disciplina";
   static final String vagasColumn = "vagas";
   static final String idProfessorColumn = "professor_id";
   static final HelperTurma _instance = HelperTurma.getInstance();
@@ -16,16 +18,16 @@ class HelperTurma extends HelperBase<Turma> {
   HelperTurma.getInstance(); 
 
   @override
-  Future<int> delete(int ano, {semestre}) {
+  Future<int> delete(int ano, {String semestre, int idDisciplina}) {
     return db.then((database) async {
       return await database
-          .delete(turmaTable, where: "$anoColumn = ? AND $semestreColumn=?", whereArgs: [ano, semestre]);
+          .delete(turmaTable, where: "$anoColumn = ? AND $semestreColumn=? AND $idDisciplinaColumn=?", whereArgs: [ano, semestre, idDisciplinaColumn]);
     });
   }
 
   @override
   Future<List> getAll() async => db.then((database) async {
-        List listMap = await database.rawQuery("SELECT * FROM $turmaTable");
+        List listMap = await database.rawQuery("SELECT ano, semestre, disciplina_id, vagas, professor_id, nome_disciplina FROM $turmaTable t INNER JOIN ${HelperDisciplina.disciplinaTable} d ON d.${HelperDisciplina.idColumn} = t.$idDisciplinaColumn");
         List<Turma> lista = List();
         for (Map m in listMap) {
           lista.add(Turma.fromMap(m));
@@ -34,7 +36,7 @@ class HelperTurma extends HelperBase<Turma> {
       });
 
   @override
-  Future<Turma> getFirst(int id) async => db.then((database) async {
+  Future<Turma> getFirst(int id,{String semestre, int idDisciplina}) async => db.then((database) async {
         List<Map> maps = await database.query(turmaTable,
             columns: [
               vagasColumn,

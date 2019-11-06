@@ -12,9 +12,9 @@ abstract class HelperBase<T> {
   static final String dataBaseName = "magister_mobile0.db";
   Database _database;
 
-  Future<T> getFirst(int id);
+  Future<T> getFirst(int id, {String semestre, int idDisciplina});
   Future<T> save(T object);
-  Future<int> delete(int id, {String semestre});
+  Future<int> delete(int id, {String semestre, int idDisciplina});
   Future<int> update(T data);
   Future<List> getAll();
   Future<int> getNumber();

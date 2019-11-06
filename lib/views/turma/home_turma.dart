@@ -37,10 +37,10 @@ class _HomeTurmaState extends State<HomeTurma> {
                   key: UniqueKey(),
                   background: Container(color: Colors.teal),
                   onDismissed: (direction) {
-                    HelperTurma.getInstance().delete(item.ano);
+                    HelperTurma.getInstance().delete(item.ano, semestre: item.semestre, idDisciplina: item.idDisciplina);
                   },
                   child: ListTile(
-                    title: Text("Disciplina"),
+                    title: Text(item.disciplina),
                     subtitle: Text(item.ano.toString()+"."+item.semestre),
                     leading: CircleAvatar(backgroundColor: Colors.teal,),
                     onTap: () {

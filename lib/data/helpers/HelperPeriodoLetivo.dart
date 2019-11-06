@@ -15,7 +15,7 @@ class HelperPeriodoLetivo extends HelperBase<PeriodoLetivo>{
   HelperPeriodoLetivo.getInstance();
 
   @override
-  Future<int> delete(int ano, {semestre}) {
+  Future<int> delete(int ano, {String semestre, int idDisciplina}) {
     return db.then((database) async {
       return await database.delete(periodoLetivoTable, where: "$anoColumn = ? AND $semestreColumn=?", whereArgs: [ano, semestre]);
     });
@@ -32,7 +32,7 @@ class HelperPeriodoLetivo extends HelperBase<PeriodoLetivo>{
       });
 
   @override
-  Future<PeriodoLetivo> getFirst(int ano) async => db.then((database) async {
+  Future<PeriodoLetivo> getFirst(int ano, {String semestre, int idDisciplina}) async => db.then((database) async {
         List<Map> maps = await database.query(periodoLetivoTable,
             columns: [
               semestreColumn,
