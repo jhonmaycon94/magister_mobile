@@ -72,7 +72,7 @@ class _EditProfessorState extends State<EditProfessor> {
                       matriculaController,
                       "MATRÍCULA",
                       Icons.apps,
-                      TextInputType.text,
+                      TextInputType.number,
                       Colors.amber,
                     ),
                   ],

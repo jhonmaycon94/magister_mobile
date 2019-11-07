@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:magister_mobile/data/helpers/HelperTurma.dart';
 import 'package:magister_mobile/data/models/Turma.dart';
 import 'package:magister_mobile/views/turma/edit_turma.dart';
-import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
 
 class HomeTurma extends StatefulWidget {
   @override

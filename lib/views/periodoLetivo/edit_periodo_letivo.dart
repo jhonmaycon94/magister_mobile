@@ -66,7 +66,7 @@ class _EditPeriodoLetivoState extends State<EditPeriodoLetivo> {
                         anoController, 
                         "ANO", 
                         Icons.apps,
-                        TextInputType.text, 
+                        TextInputType.number, 
                         Colors.lightGreen,
                         initialValue:
                             widget.edit ? widget.periodoLetivo.ano.toString() : "s"),

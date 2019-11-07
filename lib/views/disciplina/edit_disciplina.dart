@@ -73,7 +73,7 @@ class _EditDisciplinaState extends State<EditDisciplina> {
         backgroundColor: Colors.purple,
         elevation: 0,
         centerTitle: true,
-        title: Text(widget.edit ? "Editar Curso" : "Adicionar Curso"),
+        title: Text(widget.edit ? "Editar Disciplina" : "Adicionar Disciplina"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.check),

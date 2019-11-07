@@ -76,7 +76,7 @@ class _EditTurmaState extends State<EditTurma> {
                         vagasController,
                         "NÚMERO DE VAGAS",
                         Icons.apps,
-                        TextInputType.text,
+                        TextInputType.number,
                         Colors.teal,
                          initialValue: widget.edit ? widget.turma.vagas.toString() : "s"),
                     Padding(

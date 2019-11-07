@@ -121,7 +121,7 @@ class _EditCursoState extends State<EditAluno> {
                         dataController,
                         "Data de nascimento",
                         Icons.person,
-                        TextInputType.text,
+                        TextInputType.datetime,
                         Colors.indigoAccent,
                          initialValue: widget.edit ? widget.aluno.nome : "d"),
                     formField(
