@@ -55,7 +55,6 @@ class Turma {
     Map<String, dynamic> map = {
       HelperTurma.vagasColumn: vagas,
       HelperTurma.idProfessorColumn: idProfessor,
-      HelperTurma.nomeDisciplinaColumn : disciplina
     };
 
     if(ano != null && semestre != null){
