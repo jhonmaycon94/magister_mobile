@@ -1,6 +1,7 @@
 import 'package:magister_mobile/data/helpers/HelperBase.dart';
 import 'package:magister_mobile/data/models/Turma.dart';
 import 'package:magister_mobile/data/helpers/HelperDisciplina.dart';
+import 'package:magister_mobile/data/helpers/HelperProfessor.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:async';
 
@@ -10,6 +11,7 @@ class HelperTurma extends HelperBase<Turma> {
   static final String semestreColumn = "semestre";
   static final String idDisciplinaColumn = "disciplina_id";
   static final String nomeDisciplinaColumn = "nome_disciplina";
+  static final String nomeProfessorColumn = "nome_professor";
   static final String vagasColumn = "vagas";
   static final String idProfessorColumn = "professor_id";
   static final HelperTurma _instance = HelperTurma.getInstance();

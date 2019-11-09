@@ -48,7 +48,8 @@ class Turma {
     this._vagas = map[HelperTurma.vagasColumn];
     this._idDisciplina = map[HelperTurma.idDisciplinaColumn];
     this._idProfessor = map[HelperTurma.idProfessorColumn];
-    this.disciplina = map[HelperTurma.nomeDisciplinaColumn];
+    this._disciplina = map[HelperTurma.nomeDisciplinaColumn];
+    this._professor = map[HelperTurma.nomeProfessorColumn];
   }
 
   Map toMap(){
