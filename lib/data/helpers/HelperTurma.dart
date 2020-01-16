@@ -11,7 +11,7 @@ class HelperTurma extends HelperBase<Turma> {
   static final String semestreColumn = "semestre";
   static final String idDisciplinaColumn = "disciplina_id";
   static final String nomeDisciplinaColumn = "nome_disciplina";
-  static final String nomeProfessorColumn = "nome_professor";
+  static final String nomeProfessorColumn = "nome";
   static final String vagasColumn = "vagas";
   static final String idProfessorColumn = "professor_id";
   static final HelperTurma _instance = HelperTurma.getInstance();
@@ -29,7 +29,7 @@ class HelperTurma extends HelperBase<Turma> {
 
   @override
   Future<List> getAll() async => db.then((database) async {
-        List listMap = await database.rawQuery("SELECT ano, semestre, disciplina_id, vagas, professor_id, nome_disciplina FROM $turmaTable t INNER JOIN ${HelperDisciplina.disciplinaTable} d ON d.${HelperDisciplina.idColumn} = t.$idDisciplinaColumn");
+        List listMap = await database.rawQuery("SELECT $anoColumn, $semestreColumn, $idDisciplinaColumn, $vagasColumn, $idProfessorColumn, ${HelperDisciplina.nomeDisciplinaColumn}, ${HelperProfessor.nomeColumn} FROM $turmaTable t INNER JOIN ${HelperDisciplina.disciplinaTable} d ON d.${HelperDisciplina.idColumn} = t.$idDisciplinaColumn INNER JOIN ${HelperProfessor.professorTable} p ON p.${HelperProfessor.idColumn} = t.$idProfessorColumn");
         List<Turma> lista = List();
         for (Map m in listMap) {
           lista.add(Turma.fromMap(m));

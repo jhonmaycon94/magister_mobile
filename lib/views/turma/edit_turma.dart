@@ -37,6 +37,7 @@ class _EditTurmaState extends State<EditTurma> {
     if (widget.edit == true) {
       vagasController.text = widget.turma.vagas.toString();
       currentDisciplina = widget.turma.disciplina.toString();
+      currentProfessor = widget.turma.professor.toString();
       disciplinaIdController.text = widget.turma.idDisciplina.toString();
       professorIdController.text = widget.turma.idProfessor.toString();
       currentPeriodoLetvio = widget.turma.ano.toString()+"."+widget.turma.semestre.toString();
